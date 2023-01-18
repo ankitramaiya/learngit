@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+    </script>
+
+    <style>
+        body {
+            margin: 2%;
+            font-size: 120%;
+        }
+
+        th,
+        td {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp">
+    <h3>Student Details</h3>
+
+
+    <form name="registrationForm"  ng-controller="myCtrl">
+        <button type="submit" ng-click="details()"
+            class="registerbtn">show</button>
+            <table border=1>
+                
+                <tr ng-repeat="x in studDetails">
+                    <td> {{x.sno}} </td>
+                    <td> {{x.name}} </td>
+                    <td> {{x.country}} </td>
+                </tr>
+            </table>
+        
+        </form>
+
+
+   
+</body>
+<script>
+     var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.details = function () {
+
+            $scope.studDetails = [{
+                sno: 1,
+                name: 'Jhon',
+                country: 99
+            }, {
+                sno: 2,
+                name: 'Martin',
+                country: 95
+            }, {
+                sno: 3,
+                name: 'Novak Djokovic',
+                country: 90
+            }, {
+                sno: 4,
+                name: 'Pete Samprass',
+                country: 85
+            },
+            {
+                sno: 5,
+                name: 'Roy Emerson',
+                country: 80
+            }
+
+            ];
+
+        };
+        });
+</script>
+
+</html>
